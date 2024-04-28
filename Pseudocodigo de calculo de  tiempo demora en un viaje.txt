@@ -1,0 +1,77 @@
+class Viaje{
+
+	private  ModoDeViaje modoDeViaje;
+
+	private List <Trayecto> trayectos;
+
+	public double calcularTiempoDemora{
+
+  		modoDeViaje.calcularTiempoDemoraTotal(trayectos);
+
+				  	}
+
+
+}
+
+
+
+abstract class ModoDeViaje{
+
+	public double calcularTiempoDemoraTotal(List <Trayecto> trayectos);
+
+
+}
+
+
+class DetenerseNMinutosEnCadaParada{
+
+	private Int minutosAEsperar;
+
+	public double calcularTiempoDemoraTotal(List <Trayecto> trayectos){
+ 
+	double total=0;
+	for (Trayecto trayecto : trayectos){
+		total += trayecto.calcularTiempoDemoraTrayecto()
+					   }
+
+	total = total + (minutosAEsperar * trayectos.size());
+
+	return total;
+
+	}
+
+}
+
+class AvisarEstadoEnCadaPunto{
+ 	
+	
+	public double calcularTiempoDemoraTotal(List <Trayecto> trayectos){
+ 
+	double total=0;
+	for (Trayecto trayecto : trayectos){
+		total += trayecto.calcularTiempoDemoraTrayecto()
+					   }
+
+	//No especifica como sigue calculando estadisticamente el tiempo demora 
+
+	return total;
+
+	}
+
+}
+
+
+class Trayecto{
+
+	private Ubicacion origen;
+        private Ubicacion destino;
+        private CalculadorDistancia calculadorDistancia;
+
+
+	public double calcularTiempoDemoraTrayecto(){
+
+	//metodo que calcula el tiempo utilizando la distancia que calcula el metodo calcularDistancia tomando como parametros los atributos origen y destino
+						    }
+
+
+}
