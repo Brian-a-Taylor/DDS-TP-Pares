@@ -21,4 +21,14 @@ Cada vez que un Viaje se interrumpe por X motivo, se agrega a la lista de estado
 En relacion a las notificaciones que deshabilita/habilita el Solicitante se penso en tener almacenada en la clase **Contacto** un atributo _notificacionActiva_ que indica si el contacto del usuario puede recibir o no notificaciones,se va cambiando ese valor segun lo detallado en los distintos momentos del sistema.
 Tambien se almacena en una lista las notificaciones que va recibiendo el solicitante en su telefono mediante la clase **Notificacion** que almacena la fecha/hora de la notificacion y el mensaje de la misma.
 
+## Trayectos dentro de un Viaje
+
+En relacion al punto 2,como el solicitante ahora puede aclarar distintos trayectos dentro de un mismo viaje,se almacena en la clase **Viaje** una lista de **Trayecto**.
+Cada **Trayecto** almacena el origen y el destino, el orden en que se recorre y ademas un atributo de tipo **CalculadorDistancia** que sera desarrollada abajo.
+
+### Calculo de tiempo total de un viaje
+
+El calculo de tiempo total de un viaje, tiene en cuenta la suma de los calculos de los tiempos que tarda el solicitante en recorrer cada **Trayecto** para esto se utiliza un patron **Adapter** donde se almacena en la clase Trayecto un atributo de tipo interface **CalculadorDistancia**.
+Esta interface tiene un metodo _calcularDistancia_ que toma dos parametros de Lugar y devuelve un Double con la distancia entre dos puntos.
+
 
