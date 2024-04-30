@@ -26,9 +26,15 @@ Tambien se almacena en una lista las notificaciones que va recibiendo el solicit
 En relacion al punto 2,como el solicitante ahora puede aclarar distintos trayectos dentro de un mismo viaje,se almacena en la clase **Viaje** una lista de **Trayecto**.
 Cada **Trayecto** almacena el origen y el destino, el orden en que se recorre y ademas un atributo de tipo **CalculadorDistancia** que sera desarrollada abajo.
 
-### Calculo de tiempo total de un viaje
+### Calculo de tiempo total entre dos puntos
 
 El calculo de tiempo total de un viaje, tiene en cuenta la suma de los calculos de los tiempos que tarda el solicitante en recorrer cada **Trayecto** para esto se utiliza un patron **Adapter** donde se almacena en la clase Trayecto un atributo de tipo interface **CalculadorDistancia**.
 Esta interface tiene un metodo _calcularDistancia_ que toma dos parametros de Lugar y devuelve un Double con la distancia entre dos puntos.
+
+### Calculo del tiempo total de un viaje
+
+El usuario antes de iniciar un Viaje define el Modo en que quiere Viajar: Si parametriza los minutos a esperar en cada parada o si va avisando punto por punto su salud.
+En nuestro caso pensamos un patron **Strategy** donde se utiliza una clase abstracta llamada **ModoDeViaje** esa clase tiene un metodo llamado calcularTiempoDemoraTotal que devuelve un double.De esa clase heredan dos clases hijas **DetenerseNMinutosEnCadaParada** que tiene un atributo minutosAEsperar parametrizable y otra clase que hereda llamada **AvisarEnCadaPunto**
+Ambas clases implementan su calculo del viaje total segun lo que haya configurado el usuario para ese viaje que se guarda en el atributo modoDeViaje dentro de la clase Viaje que ejecuta un metodo calcularTiempoDemora que calcula el tiempo demora del Viaje delegando la responsabilidad en el atributo indicado.
 
 
