@@ -1,3 +1,7 @@
+# Integrantes:
+-Brian Taylor
+-Gonzalo Palilla
+
 # Decisiones de Diseño
 
 ## Clase Cuidadora y Solicitante 
